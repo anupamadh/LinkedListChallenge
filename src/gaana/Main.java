@@ -133,10 +133,15 @@ public class Main {
                         printMenu();
                         break;
                     case 6:
-                        if (playList.size() > 0){
+                        if (playList.size() > 0) {
                             listIterator.remove();
+                            if (listIterator.hasNext()) {
+                                System.out.println("Now playing " + listIterator.next());
+                            } else if (listIterator.hasPrevious()) {
+                                System.out.println("Now playing " + listIterator.previous());
+                            }
+                            break;
                         }
-                        break;
                 }
             }
         }
